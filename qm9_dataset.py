@@ -11,7 +11,14 @@ from tqdm import tqdm
 from time import time
 
 """
-hyperparamètres
+hyperparamèters
+
+lr : learning rate
+patience : patience of the reduce on plateau
+step : step of the reduce on plateau
+epsi : threshold
+ep : nb of epoch
+
 """
 
  
@@ -24,10 +31,18 @@ epsi = 1e-6
 ep = 500
 batch_size=32
 
-
+"""
+ntask : 0 to 11, wich target to predict
+"""
 ntask = 0
-
+"""
+operator : chose wich matrix to feed G2N2
+"""
 operator = 'adj'
+
+"""
+Hyperparameters of G2N2 architechture
+"""
 
 output_dim = 1
 num_layer = 3
@@ -58,17 +73,6 @@ test_split = len(dataset)-train_split-valid_split
 train_dt, valid_dt, test_dt = torch.utils.data.random_split(dataset,[train_split,valid_split,test_split],
                                                             generator = torch.Generator().manual_seed(448))
 
-mean = dataset.data.y[train_dt.indices].mean(0)
-std = dataset.data.y[train_dt.indices].std(0)
-
-std_dic = {           "QM9_std_labels" : std[0:12]}
-
-
-std_df = pd.DataFrame(std_dic)
-
-std_df.to_csv("data/QM9_std_labels"+str(ntask)+"pred.dat", header = True, index = False)
-
-# dataset.data.y = (dataset.data.y-mean)/std
 
 ntrid = train_split
 nvlid = valid_split
@@ -92,7 +96,6 @@ model = G2N2(node_input_dim, edge_input_dim, output_dim, device,
              readout_type  = readout_type ,level = level).to(device)
 
 
-# model.load_state_dict(torch.load("save/QM912labels.dat"))
 
 
 optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -145,7 +148,6 @@ def test():
         L+=lss.item()
     yhat=torch.cat(yhat,0)
     ygrd=torch.cat(ygrd,0)
-    # print(torch.cat([yhat[0:10],ygrd[0:10]],1))
     testmae=np.abs(ygrd.numpy()-yhat.numpy()).mean()
 
     Lv=0
@@ -205,4 +207,4 @@ for epoch in tqdm(range(1, ep+1)):
     
     results_df = pd.DataFrame(results)
     
-    results_df.to_csv("data/QM9_"+str(ntask)+"predonly_GMNvm1.dat", header = True, index = False)
+    results_df.to_csv("data/QM9_"+str(ntask)+".dat", header = True, index = False)
