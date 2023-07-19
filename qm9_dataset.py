@@ -6,9 +6,17 @@ import numpy as np
 from libs.utils import G2N2design
 from libs.gnn import G2N2, get_n_params
 import pandas as pd
+import os
 
 from tqdm import tqdm
 from time import time
+
+if not os.path.exists('save'):
+   os.makedirs('save')
+if not os.path.exists('dataset'):
+   os.makedirs('dataset')
+if not os.path.exists('data'):
+   os.makedirs('data')
 
 """
 hyperparamèters
