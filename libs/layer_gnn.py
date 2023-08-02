@@ -112,7 +112,7 @@ class G2N2Layer(torch.nn.Module):
         
         resy[:,edge_index[0],edge_index[1]] = Y.T
         
-        res = torch.matmul(resx,resy).detach()
+        res = torch.matmul(resx,resy)
         
         return res[:,edge_index[0],edge_index[1]].T
     
