@@ -106,14 +106,12 @@ class G2N2(nn.Module):
         C=data.edge_attr
         identite = C[:,0:1]
         batch_node = data.batch
-        # x,C=(self.conv1(x, edge_index, C,batch_node))
-        # x,C=(self.conv2(x, edge_index, C,batch_node))
-        # x,C=(self.conv3(x, edge_index, C,batch_node))
-        for l in self.conv:
+        
+        for i,l in enumerate(self.conv):
             x,C=(l(x, edge_index, C,batch_node))
-            # if i < self.num_layer - 1:
-            #     x = torch.relu(x)
-            #     C = torch.relu(C)
+             if i < self.num_layer - 1:
+                 x = torch.relu(x)
+                 C = torch.relu(C)
         x = self.readout(x,C,data.batch,data.batch_edge,data.node_batch_edge,identite)
         for i in range(self.decision_depth-1):
             x = torch.relu(self.fc[i](x))
