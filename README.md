@@ -20,5 +20,5 @@ In TU_dataset.py, change the configuration of G2N2 according to the config in th
 Name correspond to the dataset you which to use.
 
 After that launch TU_dataset.py.
-To see the results, launch TUD_result.py
+To see the results, launch TUD_results.py
 
