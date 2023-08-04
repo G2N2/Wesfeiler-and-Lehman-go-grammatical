@@ -2,7 +2,10 @@
 # Wesfeiler-and-Lehman-go-grammatical
 
 
-This code is related to the submited paper Wesfeiler-and-Lehman-go-grammatical in Neurips 2023. It uses pytorch.
+This code is related to the submited paper Wesfeiler-and-Lehman-go-grammatical in Neurips 2023. It uses pytorch and cuda.
+
+Python version 3.8.10
+Pytorch version 1.12.0
 
 
 To reproduce the experiments in the paper, you must launch the file using python.
@@ -21,4 +24,10 @@ Name correspond to the dataset you which to use.
 
 After that launch TU_dataset.py.
 To see the results, launch TUD_results.py
+
+Filtering experiment:
+
+In G2N2_filtering.py, select the type of filter to learn with ntask( 0 : low-pass, 1 : high-pass, 2 : band-pass).
+
+Then launch G2N2_filtering.py.
 
