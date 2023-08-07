@@ -17,6 +17,12 @@ In qm9_dataset.py, ntask corresponds to the target you want to learn from 0 to 1
 
 After choosing a target, launch qm9_dataset.py.
 
+QM9 12 targets:
+
+launch qm9_dataset_12.py
+
+To use the GNN derived from the exhaustive CFG launch qm9_dataset_12_labels_exhaust_GNN.py
+
 TUD experiment:
 
 In TU_dataset.py, change the configuration of G2N2 according to the config in the supplementary material of the paper.
