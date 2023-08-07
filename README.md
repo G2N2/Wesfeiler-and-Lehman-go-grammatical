@@ -19,7 +19,7 @@ After choosing a target, launch qm9_dataset.py.
 
 QM9 12 targets:
 
-launch qm9_dataset_12.py
+launch qm9_dataset_12_labels.py
 
 To use the GNN derived from the exhaustive CFG launch qm9_dataset_12_labels_exhaust_GNN.py
 
