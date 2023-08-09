@@ -56,8 +56,7 @@ test_split = len(dataset)-train_split-valid_split
 
 
 
-train_dt, valid_dt, test_dt = torch.utils.data.random_split(dataset,[train_split,valid_split,test_split],
-                                                            generator = torch.Generator().manual_seed(448))
+train_dt, valid_dt, test_dt = torch.utils.data.random_split(dataset,[train_split,valid_split,test_split])
 
 mean = dataset.data.y[train_dt.indices].mean(0)
 std = dataset.data.y[train_dt.indices].std(0)
