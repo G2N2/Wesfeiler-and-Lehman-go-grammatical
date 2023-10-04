@@ -2,7 +2,7 @@
 # Wesfeiler-and-Lehman-go-grammatical
 
 
-This code is related to the submited paper Wesfeiler-and-Lehman-go-grammatical in Neurips 2023. It uses pytorch and cuda.
+This code is related to the submited paper Wesfeiler-and-Lehman-go-grammatical in ICLR 2024. It uses pytorch and cuda.
 
 Python version 3.8.10
 Pytorch version 1.12.0
