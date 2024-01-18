@@ -36,3 +36,11 @@ Then run G2N2_filtering.py.
 
 To cite our work, use the following bibtex
 
+@inproceedings{
+piquenot2024grammatical,
+title={G\${\textasciicircum}2\$N\${\textasciicircum}2\$ : Weisfeiler and Lehman go grammatical},
+author={Jason Piquenot, Aldo Moscatelli, Maxime Berar, Pierre Héroux, Romain Raveaux, Jean-Yves RAMEL, Sébastien Adam},
+booktitle={The Twelfth International Conference on Learning Representations},
+year={2024},
+url={https://openreview.net/forum?id=eZneJ55mRO}
+}
