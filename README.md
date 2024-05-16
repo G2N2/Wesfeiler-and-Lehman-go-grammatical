@@ -35,5 +35,6 @@ Then run G2N2_filtering.py.
 
 
 To cite our work, use the following bibtex
-
+'''
 @inproceedings{ piquenot2024grammatical, title={G$^2$N$^2$ : Weisfeiler and Lehman go grammatical}, author={Piquenot, Jason and Moscatelli, Aldo and Berar,Maxime and Héroux, Pierre and Raveaux, Romain and RAMEL, Jean-Yves and Adam, Sébastien}, booktitle={The Twelfth International Conference on Learning Representations}, year={2024}}
+'''
